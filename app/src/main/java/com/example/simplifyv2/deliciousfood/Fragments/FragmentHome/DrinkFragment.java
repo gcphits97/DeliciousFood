@@ -61,7 +61,7 @@ public class DrinkFragment extends Fragment implements ViewDrink {
             downloadImageBitmapFromURL.DownloadImage(listBanChay, imageView, i);
             viewFlipperDrink.addView(imageView, i);
         }
-        viewFlipperDrink.setFlipInterval(3000);
+        viewFlipperDrink.setFlipInterval(5000);
         viewFlipperDrink.startFlipping();
     }
 }

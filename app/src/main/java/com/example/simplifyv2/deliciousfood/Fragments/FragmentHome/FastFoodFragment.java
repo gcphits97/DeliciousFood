@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class FastFoodFragment extends Fragment implements View.OnClickListener, ViewFastFood, View.OnTouchListener {
+public class FastFoodFragment extends Fragment implements View.OnClickListener, ViewFastFood {
     PresentLogicFastFood presentLogicFastFood;
     RecyclerView recyclerViewFastFoodFragment;
     AdapterFastFoodFragment adapterFastFoodFragment;
@@ -73,33 +73,7 @@ public class FastFoodFragment extends Fragment implements View.OnClickListener, 
             downloadImageBitmapFromURL.DownloadImage(listBanChay, imageView, i);
             viewFlipperFastFood.addView(imageView, i);
         }
-        viewFlipperFastFood.setFlipInterval(10000);
+        viewFlipperFastFood.setFlipInterval(5000);
         viewFlipperFastFood.startFlipping();
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if (R.id.viewFlipperFastFood == v.getId()) {
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    initialX = event.getX();
-                    break;
-                case  MotionEvent.ACTION_UP:
-                    float initial = event.getX();
-                    if(initialX > initial) {
-                        if (viewFlipperFastFood.getDisplayedChild() == 1) {
-                            viewFlipperFastFood.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.in_from_left));
-                            viewFlipperFastFood.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.out_from_left));
-                            viewFlipperFastFood.showNext();
-                        } else if (viewFlipperFastFood.getDisplayedChild() == 0) {
-                            viewFlipperFastFood.setInAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.in_from_right));
-                            viewFlipperFastFood.setOutAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.out_from_right));
-                            viewFlipperFastFood.showPrevious();
-                        }
-                    }
-                    break;
-            }
-        }
-        return false;
     }
 }

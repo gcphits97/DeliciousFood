@@ -60,7 +60,7 @@ public class CakeFragment extends Fragment implements ViewCake {
             downloadImageBitmapFromURL.DownloadImage(listBanChay, imageView, i);
             viewFlipperCake.addView(imageView, i);
         }
-        viewFlipperCake.setFlipInterval(3000);
+        viewFlipperCake.setFlipInterval(5000);
         viewFlipperCake.startFlipping();
     }
 }
