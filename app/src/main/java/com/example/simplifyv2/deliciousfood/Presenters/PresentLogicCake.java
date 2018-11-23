@@ -44,4 +44,29 @@ public class PresentLogicCake implements ImpCake {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void getDataCakeBanChay() {
+        List<HomeModel> listBanChay;
+        String data = "";
+        List<HashMap<String, String>> attributes = new ArrayList<>();
+
+        HashMap<String, String> hsLoaiMonAn = new HashMap<>();
+        hsLoaiMonAn.put("id_loaimonan", "6");
+        attributes.add(hsLoaiMonAn);
+
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_monan(), attributes);
+        downloadJSONData.execute();
+
+        try {
+            data = downloadJSONData.get();
+            JSONHome jsonHome = new JSONHome();
+            listBanChay = jsonHome.ParserJSONHome(data);
+            viewCake.ShowDataCakeViewFlipper(listBanChay);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

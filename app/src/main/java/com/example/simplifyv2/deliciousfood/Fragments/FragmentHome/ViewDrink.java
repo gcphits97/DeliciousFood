@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ViewDrink {
     void ShowDataDrink(List<HomeModel> homeModelList);
+    void ShowDataDrinkViewFlipper(List<HomeModel> listBanChay);
 }

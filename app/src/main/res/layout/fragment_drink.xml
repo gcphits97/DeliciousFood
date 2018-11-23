@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ViewFlipper
+        android:id="@+id/viewFlipperDrink"
         android:background="@drawable/igneel"
         android:layout_width="match_parent"
         android:layout_height="150dp"/>

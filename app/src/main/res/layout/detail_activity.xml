@@ -8,6 +8,7 @@
         android:id="@+id/toolbar_detail_activity"
         layout="@layout/toolbar" />
     <ImageView
+        android:id="@+id/imageViewDetail"
         android:src="@drawable/igneel"
         android:scaleType="fitXY"
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/txtTenMonAn"
             android:text="Ten mon an"
             android:textSize="13sp"
             android:textColor="@color/colorPrimary"
@@ -26,7 +28,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="Ten mon an"
+            android:id="@+id/txtGiaBan"
+            android:text="Gia ban"
             android:textSize="13sp"
             android:textAlignment="textEnd"
             android:textColor="@color/colorPrimary"
@@ -36,6 +39,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView
+        android:id="@+id/txtMoTa"
         android:padding="5dp"
         android:text="day la phan mo ta chi tiet"
         android:textColor="@color/colorBlack"

@@ -44,4 +44,29 @@ public class PresentLogicDrink implements ImpDrink {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void getDataDrinkBanChay() {
+        List<HomeModel> listBanChay;
+        String data = "";
+        List<HashMap<String, String>> attributes = new ArrayList<>();
+
+        HashMap<String, String> hsLoaiMonAn = new HashMap<>();
+        hsLoaiMonAn.put("id_loaimonan", "5");
+        attributes.add(hsLoaiMonAn);
+
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_monan(), attributes);
+        downloadJSONData.execute();
+
+        try {
+            data = downloadJSONData.get();
+            JSONHome jsonHome = new JSONHome();
+            listBanChay = jsonHome.ParserJSONHome(data);
+            viewDrink.ShowDataDrinkViewFlipper(listBanChay);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

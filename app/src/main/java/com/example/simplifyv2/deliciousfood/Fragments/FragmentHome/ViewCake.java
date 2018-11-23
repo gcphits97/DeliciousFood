@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ViewCake {
     void ShowDataCake(List<HomeModel> homeModelList);
+    void ShowDataCakeViewFlipper(List<HomeModel> listBanChay);
 }

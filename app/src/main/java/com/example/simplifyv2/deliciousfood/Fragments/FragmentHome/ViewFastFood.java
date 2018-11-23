@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ViewFastFood {
     void ShowDataFastFood(List<HomeModel> homeModelList);
+    void ShowDataFastFoodViewFlipper(List<HomeModel> listBanChay);
 }

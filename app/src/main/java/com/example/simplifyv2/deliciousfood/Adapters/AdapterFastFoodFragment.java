@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.simplifyv2.deliciousfood.Models.HomeModel;
 import com.example.simplifyv2.deliciousfood.R;
+import com.example.simplifyv2.deliciousfood.Server.DownloadImageBitmapFromURL;
 import com.example.simplifyv2.deliciousfood.View.DetailActivity;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -48,15 +49,22 @@ public class AdapterFastFoodFragment extends RecyclerView.Adapter<AdapterFastFoo
 
     @Override
     public void onBindViewHolder(@NonNull final AdapterFastFoodFragment.MyHolder myHolder, int i) {
-        HomeModel homeModel = homeModelList.get(i);
+        final HomeModel homeModel = homeModelList.get(i);
+        DownloadImageBitmapFromURL downloadImageBitmapFromURL = new DownloadImageBitmapFromURL();
         myHolder.txtFoodName.setText(homeModel.getTenmonan());
         myHolder.txtContent.setText(homeModel.getMotamonan());
         myHolder.txtPrice.setText(String.valueOf(homeModel.getGiaban())+"vnđ");
-        DownloadImageBitmapFromURL(homeModel, myHolder.imageViewFastFood);
+        downloadImageBitmapFromURL.DownloadImage(homeModelList, myHolder.imageViewFastFood, i);
         myHolder.cardViewFastFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent iDetail = new Intent(context, DetailActivity.class);
+                iDetail.putExtra("ten", homeModel.getTenmonan());
+                iDetail.putExtra("mota", homeModel.getMotamonan());
+                iDetail.putExtra("giaban", String.valueOf(homeModel.getGiaban()));
+                iDetail.putExtra("id_monan", homeModel.getId_monan());
+                iDetail.putExtra("hinhanh", homeModel.getHinhanhmonan());
+                iDetail.putExtra("id_loaimonan", homeModel.getId_loaimoanan());
                 context.startActivity(iDetail);
             }
         });
@@ -65,19 +73,5 @@ public class AdapterFastFoodFragment extends RecyclerView.Adapter<AdapterFastFoo
     @Override
     public int getItemCount() {
         return homeModelList.size();
-    }
-    private void DownloadImageBitmapFromURL(HomeModel homeModel, ImageView imageViewFastFood) {
-        Picasso.get().load(homeModel.getHinhanhmonan())
-                .placeholder(R.drawable.albedo)
-                .error(R.mipmap.ic_error)
-                .into(imageViewFastFood, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                    }
-                });
     }
 }

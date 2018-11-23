@@ -44,4 +44,29 @@ public class PresentLogicFastFood implements ImpFastFood {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void getDataFastFoodBanChay() {
+        List<HomeModel> listBanChay;
+        String data = "";
+        List<HashMap<String, String>> attributes = new ArrayList<>();
+
+        HashMap<String, String> hsLoaiMonAn = new HashMap<>();
+        hsLoaiMonAn.put("id_loaimonan", "4");
+        attributes.add(hsLoaiMonAn);
+
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_monan(), attributes);
+        downloadJSONData.execute();
+
+        try {
+            data = downloadJSONData.get();
+            JSONHome jsonHome = new JSONHome();
+            listBanChay = jsonHome.ParserJSONHome(data);
+            viewFastFood.ShowDataFastFoodViewFlipper(listBanChay);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
