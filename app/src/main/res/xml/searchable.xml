@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="string resource"
+    android:hint="string resource"
+    android:searchMode="queryRewriteFromData"
+    android:searchButtonText="string resource"
+    android:inputType="text"
+    android:imeOptions="normal"
+    android:searchSuggestAuthority="@string/searchview_hint"
+    android:searchSuggestPath="@string/searchview_title"
+    android:searchSuggestSelection="@string/app_name"
+    android:searchSuggestIntentAction="@string/delicious_food_company"
+    android:searchSuggestIntentData="@string/delicious_food"
+    android:searchSuggestThreshold="10"
+    android:includeInGlobalSearch="true"
+    android:searchSettingsDescription="string resource"
+    android:queryAfterZeroResults="true"
+    android:voiceSearchMode="showVoiceSearchButton"
+    android:voiceLanguageModel="web_search"
+    android:voicePromptText="string resource"
+    android:voiceLanguage="string"
+    android:voiceMaxResults="15">
+<actionkey
+android:keycode="KEYCODE_F3"
+android:queryActionMsg="string"
+android:suggestActionMsg="string"
+android:suggestActionMsgColumn="string" />
+</searchable>

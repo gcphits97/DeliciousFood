@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Delicious Food</string>
+    //start splash screen
+    <string name="delicious_food">Delicious Food</string>
+    <string name="loading">Loading...</string>
+    <string name="delicious_food_company">Delicious Food Company</string>
+    //end splash screen
+    //start home activity
+    <string name="searchview_hint">Search food, drink or cake...</string>
+    <string name="searchview_title">Search</string>
+    <string name="title_home">Home</string>
+    <string name="title_account">Account</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_cart">Cart</string>
+    //end home activity
+    //start account fragment
+    <string name="view_profile_fragment_account">View Profile</string>
+    <string name="logout_fragment_account">Log Out</string>
+    <string name="login_fragment_account">Login</string>
+    <string name="settings_fragment_account">Settings</string>
+    <string name="help_fragment_account">Help</string>
+    <string name="about_fragment_account">About</string>
+    <string name="payment_fragment_account">Payment</string>
+    <string name="order_history_fragment_account">Order History</string>
+    <string name="invite_friends_fragment_account">Invite Friends</string>
+    <string name="feedback_fragment_account">Feedback</string>
+    //end account fragment
+    //start payment activity
+    <string name="title_payment_activity">Payment</string>
+    <string name="airpay_payment_activity">AirPay</string>
+    <string name="now_credits_payment_activity">Now Credits</string>
+    <string name="credit_visa_master_jcb_payment_activity">Credit VISA/MASTER/JCB</string>
+    <string name="cash_payment_activity">Cash</string>
+    <string name="internet_banking_payment_activity">Internet Banking</string>
+    //end payment activity
+    //start fragment home
+    <string name="title_fragment_fastfood">Fast Food</string>
+    <string name="title_fragment_drink">Drink</string>
+    <string name="title_fragment_cake">Cake</string>
+    //end fragment home
+    //start activity login
+    <string name="edit_text_username_login">Enter the Username...</string>
+    <string name="edit_text_password_login">Enter the Password...</string>
+    <string name="button_login">Login</string>
+    <string name="button_login_with_facebook">Login with Facebook</string>
+    <string name="button_login_with_google">Login with Google+</string>
+    <string name="text_register">Register</string>
+    <string name="have_not_an_account">Do you have not an account?</string>
+    //end activity login
+    //start activity register
+    <string name="button_register">Register</string>
+    <string name="edit_text_username_register">Enter the Username...</string>
+    <string name="edit_text_password_register">Enter the Password...</string>
+    <string name="edit_text_re_enter_password_register">Re-Enter the Password...</string>
+    <string name="edit_text_first_name">Enter the first name...</string>
+    <string name="edit_text_last_name">Enter the last name...</string>
+    <string name="have_an_account">Do you have an account?</string>
+    <string name="text_login">Login</string>
+    <string name="text_request">Please fill information in the form below to proceed with the registration account</string>
+    //end activity register
+    //start fragmnet fastfood
+    <string name="price_fastfood_fragment">Price:</string>
+    //end fragment fastfood
+    //start activity detail
+    <string name="title_detail_activity">Detail</string>
+    //end activity detail
+</resources>
