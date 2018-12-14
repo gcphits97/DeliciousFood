@@ -52,8 +52,8 @@
     <string name="edit_text_username_register">Enter the Username...</string>
     <string name="edit_text_password_register">Enter the Password...</string>
     <string name="edit_text_re_enter_password_register">Re-Enter the Password...</string>
-    <string name="edit_text_first_name">Enter the first name...</string>
-    <string name="edit_text_last_name">Enter the last name...</string>
+    <string name="edit_text_name_register">Enter the your name...</string>
+    <string name="edit_text_email_register">Enter the email...</string>
     <string name="have_an_account">Do you have an account?</string>
     <string name="text_login">Login</string>
     <string name="text_request">Please fill information in the form below to proceed with the registration account</string>
@@ -64,4 +64,48 @@
     //start activity detail
     <string name="title_detail_activity">Detail</string>
     //end activity detail
+    //start activity profile
+    <string name="title_profile_activity">Profile</string>
+    <string name="name_in_profile_activity">Name:</string>
+    <string name="address_in_profile_activity">Address:</string>
+    <string name="phone_number_in_profile_activity">Phone:</string>
+    <string name="email_in_profile_activity">Email:</string>
+    <string name="change_in_profile_activity">Change</string>
+    <string name="save_in_profile_activity">Save</string>
+    //end activity profile
+    //error start
+    <string name="error_email">Sai dinh dang email</string>
+    <string name="error_isemty">Vui long nhap day du thong tin ben duoi</string>
+    <string name="error_username_isexist">Ten dang nhap da ton tai</string>
+    <string name="error_password_so_short">Mat khau qua ngan</string>
+    <string name="error_re_enter_password">Nhap lai password sai</string>
+    //error end
+    //detail activity start
+    <string name="hint_comment">Comment...</string>
+    //detail activity end
+    //cart fragment start
+    <string name="amount">So luong:</string>
+    <string name="tongtien">Tong tien:</string>
+    //cart fragment end
+    //cart detail activity start
+    <string name="save_to_cart">Save</string>
+    <string name="delivery">Delivery</string>
+    <string name="book">Book</string>
+    <string name="title_alert_dialog_delete">Delete</string>
+    <string name="message_alert_dialog_delete">You want to delete?</string>
+    <string name="ok_alert_dialog_delete">OK</string>
+    <string name="cancel_alert_dialog_delete">Cancel</string>
+    <string name="delete_successful">Data delete successfully</string>
+    <string name="delete_fail">Unable delete data to database</string>
+    //cart detail activity end
+    //dialog book start
+    <string name="title_dialog_book">Dat hang</string>
+    <string name="day_dialog_book">Day:</string>
+    <string name="month_dialog_book">Month:</string>
+    <string name="hour_dialog_book">Hour:</string>
+    <string name="minute_dialog_book">Minute:</string>
+    <string name="content_dialog_book">ban vui long thanh toan trc 50% de tien hanh dat ban</string>
+    <string name="button_book_dialog_book">Dat ban</string>
+    <string name="button_relative_dialog_book">Lien ket tai khoan ngan hang</string>
+    //dialog book end
 </resources>

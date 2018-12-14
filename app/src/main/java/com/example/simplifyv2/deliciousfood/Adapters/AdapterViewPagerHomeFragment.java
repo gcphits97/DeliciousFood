@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.simplifyv2.deliciousfood.Fragments.FragmentHome.CakeFragment;
-import com.example.simplifyv2.deliciousfood.Fragments.FragmentHome.DrinkFragment;
-import com.example.simplifyv2.deliciousfood.Fragments.FragmentHome.FastFoodFragment;
+import com.example.simplifyv2.deliciousfood.View.Fragments.FragmentHome.CakeFragment;
+import com.example.simplifyv2.deliciousfood.View.Fragments.FragmentHome.DrinkFragment;
+import com.example.simplifyv2.deliciousfood.View.Fragments.FragmentHome.FastFoodFragment;
 
 public class AdapterViewPagerHomeFragment extends FragmentPagerAdapter {
 
@@ -25,8 +25,9 @@ public class AdapterViewPagerHomeFragment extends FragmentPagerAdapter {
                 return new DrinkFragment();
             case 2:
                 return new CakeFragment();
+            default:
+                return new FastFoodFragment();
         }
-        return null;
     }
 
     @Override
@@ -38,4 +39,5 @@ public class AdapterViewPagerHomeFragment extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return tabTitle[position];
     }
+
 }

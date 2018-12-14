@@ -1,9 +1,9 @@
 package com.example.simplifyv2.deliciousfood.Presenters;
 
-import com.example.simplifyv2.deliciousfood.Fragments.FragmentHome.ViewCake;
+import com.example.simplifyv2.deliciousfood.View.Fragments.FragmentHome.ViewCake;
 import com.example.simplifyv2.deliciousfood.Models.HomeModel;
 import com.example.simplifyv2.deliciousfood.Models.JSONHome;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONData;
+import com.example.simplifyv2.deliciousfood.Server.DownloadJSONHome;
 import com.example.simplifyv2.deliciousfood.Server.Path;
 
 import java.util.ArrayList;
@@ -30,11 +30,11 @@ public class PresentLogicCake implements ImpCake {
         hsLoaiMonAn.put("id_loaimonan", "3");
         attributes.add(hsLoaiMonAn);
 
-        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_monan(), attributes);
-        downloadJSONData.execute();
+        DownloadJSONHome downloadJSONHome = new DownloadJSONHome(path.getPath_monan_theoloai(), attributes);
+        downloadJSONHome.execute();
 
         try {
-            data = downloadJSONData.get();
+            data = downloadJSONHome.get();
             JSONHome jsonHome = new JSONHome();
             homeModelList = jsonHome.ParserJSONHome(data);
             viewCake.ShowDataCake(homeModelList);
@@ -55,11 +55,11 @@ public class PresentLogicCake implements ImpCake {
         hsLoaiMonAn.put("id_loaimonan", "6");
         attributes.add(hsLoaiMonAn);
 
-        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_monan(), attributes);
-        downloadJSONData.execute();
+        DownloadJSONHome downloadJSONHome = new DownloadJSONHome(path.getPath_monan_theoloai(), attributes);
+        downloadJSONHome.execute();
 
         try {
-            data = downloadJSONData.get();
+            data = downloadJSONHome.get();
             JSONHome jsonHome = new JSONHome();
             listBanChay = jsonHome.ParserJSONHome(data);
             viewCake.ShowDataCakeViewFlipper(listBanChay);

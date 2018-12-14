@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
     android:layout_width="match_parent"
@@ -38,6 +38,7 @@
             android:layout_marginTop="5dp"
             android:textSize="18sp"
             android:textColor="@color/colorWhite"
+            android:inputType="textPassword"
             android:hint="@string/edit_text_password_login"
             android:textColorHint="@color/colorGray"
             android:layout_width="match_parent"

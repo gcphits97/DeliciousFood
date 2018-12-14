@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorGray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar_detail_activity"
+        layout="@layout/toolbar" />
+    <ImageView
+        android:id="@+id/imageViewDetail"
+        android:src="@drawable/igneel"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+    <LinearLayout
+        android:padding="5dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtTenMonAn"
+            android:textSize="13sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txtGiaBan"
+            android:textSize="13sp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtMoTa"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorBlack"
+        android:background="@color/colorWhite"
+        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtSoLuongAdd"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:hint="So luong"
+            android:background="@drawable/custom_amount"
+            android:layout_marginRight="120dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:textColor="@color/colorWhite"
+            android:text="Add to cart"
+            android:layout_weight="1"
+            android:background="@drawable/custom_background_button_add_cart"
+            android:layout_width="0dp"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/ic_action_add_shopping_cart_white"
+            android:padding="10dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollViewDetail"
+        android:padding="5dp"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </HorizontalScrollView>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:background="@color/colorBlack"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <Button
+                android:id="@+id/btnLike"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorBlack"
+                android:drawableTop="@drawable/icon_like_white"
+                android:paddingTop="10dp"
+                android:textSize="10sp"
+                android:textAllCaps="false"
+                android:paddingBottom="5dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/btnCountComment"
+                android:layout_width="0dp"
+                android:paddingTop="10dp"
+                android:drawableTop="@drawable/ic_action_comment_white"
+                android:layout_weight="1"
+                android:paddingBottom="5dp"
+                android:background="@color/colorBlack"
+                android:textAllCaps="false"
+                android:textSize="10sp"
+                android:textColor="@color/colorWhite"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorBlack"
+                android:drawableTop="@drawable/ic_action_share_white"
+                android:paddingTop="10dp"
+                android:textSize="10sp"
+                android:textAllCaps="false"
+                android:paddingBottom="5dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/imageButtonCamera"
+                    android:src="@drawable/ic_action_camera_white"
+                    android:background="@color/colorBlack"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <EditText
+                android:layout_width="0dp"
+                android:textSize="20sp"
+                android:hint="@string/hint_comment"
+                android:textColor="@color/colorBlack"
+                android:layout_weight="1"
+                android:inputType="textMultiLine"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/imageButtonSend"
+                    android:src="@drawable/ic_action_send_white"
+                    android:background="@color/colorBlack"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewComment"
+            android:background="@color/colorGray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>

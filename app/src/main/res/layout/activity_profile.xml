@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbarProfile"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/imageBackProfile"
+            android:src="@drawable/ic_action_arrow_left_white"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtTitleProfile"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txtSaveProfile"
+                    android:textSize="20sp"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    android:text="@string/save_in_profile_activity"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtChangeProfile"
+                    android:textSize="20sp"
+                    android:padding="5dp"
+                    android:text="@string/change_in_profile_activity"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:padding="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageViewAvatar"
+            android:src="@drawable/albedo"
+            android:layout_width="130dp"
+            android:layout_height="130dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/name_in_profile_activity"
+                android:gravity="center_vertical"
+                android:textSize="17sp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtChangeName"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="17sp"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtNameProfile"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorBlack"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/address_in_profile_activity"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtChangeAddress"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="17sp"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtAddressProfile"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorBlack"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/phone_number_in_profile_activity"
+                android:textSize="17sp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtChangePhone"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="17sp"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtPhoneNumberProfile"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorBlack"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/email_in_profile_activity"
+                android:textSize="17sp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edtChangeEmail"
+                    android:visibility="gone"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="17sp"
+                    android:textCursorDrawable="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtEmailProfile"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorBlack"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

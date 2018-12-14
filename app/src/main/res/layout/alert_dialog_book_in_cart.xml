@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp"
+        android:text="@string/title_dialog_book"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:text="@string/day_dialog_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/spinnerDay"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:text="@string/month_dialog_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/spinnerMonth"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:text="@string/hour_dialog_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/spinnerHour"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:text="@string/minute_dialog_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/spinnerMinute"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <TextView
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:padding="5dp"
+        android:text="@string/content_dialog_book"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnRelativeBank"
+        android:text="@string/button_relative_dialog_book"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/custom_background_button_add_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnBook"
+        android:text="@string/button_book_dialog_book"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/custom_background_button_add_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

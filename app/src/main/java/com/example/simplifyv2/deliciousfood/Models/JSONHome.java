@@ -19,6 +19,7 @@ public class JSONHome {
                 JSONObject value = jsonArray.getJSONObject(i);
 
                 HomeModel datafastFood = new HomeModel();
+
                 datafastFood.setId_monan(value.getInt("id_monan"));
                 datafastFood.setTenmonan(value.getString("tenmonan"));
                 datafastFood.setHinhanhmonan(value.getString("hinhanhmonan"));
@@ -31,7 +32,6 @@ public class JSONHome {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         return homeModelList;
     }
 }
