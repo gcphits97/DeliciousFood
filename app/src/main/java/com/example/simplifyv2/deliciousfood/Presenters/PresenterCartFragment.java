@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 import com.example.simplifyv2.deliciousfood.Models.DonHangModel;
 import com.example.simplifyv2.deliciousfood.Models.JSONDonHang;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONDonHang;
+import com.example.simplifyv2.deliciousfood.Server.DownloadJSONData;
 import com.example.simplifyv2.deliciousfood.Server.Path;
 import com.example.simplifyv2.deliciousfood.View.Fragments.ViewCart;
 
@@ -32,10 +32,10 @@ public class PresenterCartFragment implements ImpCart {
         SharedPreferences recived = context.getSharedPreferences("user", Context.MODE_PRIVATE);
         int id_khachhang = recived.getInt("id", 0);
 
-        DownloadJSONDonHang downloadJSONDonHang = new DownloadJSONDonHang(path.getPath_donhang());
-        downloadJSONDonHang.execute();
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_donhang());
+        downloadJSONData.execute();
         try {
-            dataDonHang = downloadJSONDonHang.get();
+            dataDonHang = downloadJSONData.get();
             JSONDonHang jsonDonHang = new JSONDonHang();
             donHangModelList = jsonDonHang.ParserJSONDonHang(dataDonHang);
 

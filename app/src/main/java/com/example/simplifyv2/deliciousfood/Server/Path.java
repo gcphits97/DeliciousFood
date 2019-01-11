@@ -1,21 +1,21 @@
 package com.example.simplifyv2.deliciousfood.Server;
 
 public class Path {
-    String path_monan_theoloai = "http://192.168.100.34/Server/monantheoloai.php";
-    String path_monan = "http://192.168.100.34/Server/monan.php";
-    String path_khachhang = "http://192.168.100.34/Server/khachhang.php";
-    String path_khachhang_insert = "http://192.168.100.34/Server/khachhang_insert.php";
-    String path_update_profile = "http://192.168.100.34/Server/update_profile.php";
-    String path_donhang = "http://192.168.100.34/Server/donhang.php";
-    String path_update_donhang = "http://192.168.100.34/Server/donhang_update.php";
-    String path_insert_donhang = "http://192.168.100.34/Server/donhang_insert.php";
-    String path_delete_donhang = "http://192.168.100.34/Server/delete_donhang.php";
-    String path_chitietmonan = "http://192.168.100.34/Server/chitietmonan.php";
-    String path_chitietmonan_insert = "http://192.168.100.34/Server/chitietmonan_insert.php";
-    String path_chitietmonan_update_like = "http://192.168.100.34/Server/chitietmonan_update_like.php";
-    String path_chitietmonan_update_share = "http://192.168.100.34/Server/chitietmonan_update_share.php";
-    String path_chitietdonhang = "http://192.168.100.34/Server/chitietdonhang.php";
-    String path_chitietdonhang_insert = "http://192.168.100.34/Server/chitietdonhang_insert.php";
+    String path_monan_theoloai = "http://172.20.10.5/Server/monantheoloai.php";
+    String path_monan = "http://172.20.10.5/Server/monan.php";
+    String path_khachhang = "http://172.20.10.5/Server/khachhang.php";
+    String path_khachhang_insert = "http://172.20.10.5/Server/khachhang_insert.php";
+    String path_update_profile = "http://172.20.10.5/Server/update_profile.php";
+    String path_donhang = "http://172.20.10.5/Server/donhang.php";
+    String path_update_donhang = "http://172.20.10.5/Server/donhang_update.php";
+    String path_insert_donhang = "http://172.20.10.5/Server/donhang_insert.php";
+    String path_delete_donhang = "http://172.20.10.5/Server/delete_donhang.php";
+    String path_chitietmonan = "http://172.20.10.5/Server/chitietmonan.php";
+    String path_chitietmonan_insert = "http://172.20.10.5/Server/chitietmonan_insert.php";
+    String path_chitietmonan_update_like = "http://172.20.10.5/Server/chitietmonan_update_like.php";
+    String path_chitietmonan_update_share = "http://172.20.10.5/Server/chitietmonan_update_share.php";
+    String path_chitietdonhang = "http://172.20.10.5/Server/chitietdonhang.php";
+    String path_chitietdonhang_insert = "http://172.20.10.5/Server/chitietdonhang_insert.php";
 
     public String getPath_chitietdonhang_insert() {
         return path_chitietdonhang_insert;

@@ -2,7 +2,6 @@ package com.example.simplifyv2.deliciousfood.View;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,13 +21,13 @@ import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener, ViewDetail {
     Toolbar toolbar_detail_activity;
-    TextView txtTitle, txtTenMonAn, txtMoTa, txtGiaBan;
+    TextView txtTitle, txtTenMonAn, txtMoTa, txtGiaBan, txtSoLuong, txtTongTien;
     ImageView imageBack, imageViewDetail;
     Button btnAddToCart, btnLike, btnShare;
     PresenterDetail presenterDetail;
+    ImageButton imageButtonMinus, imageButtonAdd;
     String ten, giaban, hinhanh, mota;
-    EditText edtSoLuongAdd;
-    private int id_monan, id_khachhang;
+    private int id_monan, id_khachhang, tongtien;
     SharedPreferences recived;
     @SuppressLint("WrongViewCast")
     @Override
@@ -45,6 +44,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         id_khachhang = recived.getInt("id", 0);
 
         toolbar_detail_activity = findViewById(R.id.toolbar_detail_activity);
+        txtSoLuong = findViewById(R.id.txtSoLuong);
+        txtTongTien = findViewById(R.id.txtTongTien);
+        imageButtonMinus = findViewById(R.id.imageButtonMinus);
+        imageButtonAdd = findViewById(R.id.imageButtonAdd);
         txtTitle = findViewById(R.id.txtTitle);
         imageBack = findViewById(R.id.imageBack);
         txtTenMonAn = findViewById(R.id.txtTenMonAn);
@@ -52,7 +55,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         txtGiaBan = findViewById(R.id.txtGiaBan);
         imageViewDetail = findViewById(R.id.imageViewDetail);
         btnAddToCart = findViewById(R.id.btnAddToCart);
-        edtSoLuongAdd = findViewById(R.id.edtSoLuongAdd);
         btnLike = findViewById(R.id.btnLike);
         btnShare = findViewById(R.id.btnShare);
 
@@ -64,6 +66,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         txtTenMonAn.setText(ten);
         txtMoTa.setText(mota);
         txtGiaBan.setText(giaban+"vnđ");
+        txtSoLuong.setText("0");
+        imageButtonMinus.setVisibility(View.GONE);
         DownloadImageBitmapFromURL(hinhanh, imageViewDetail);
 
         presenterDetail = new PresenterDetail(this);
@@ -73,6 +77,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         btnAddToCart.setOnClickListener(this);
         btnLike.setOnClickListener(this);
         btnShare.setOnClickListener(this);
+        imageButtonMinus.setOnClickListener(this);
+        imageButtonAdd.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -81,14 +87,41 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 onBackPressed();
                 break;
             case R.id.btnAddToCart:
-                int soluong = Integer.parseInt(edtSoLuongAdd.getText().toString());
-                int tongtien = soluong * Integer.parseInt(giaban);
-                presenterDetail.setEventAddtoCart(id_monan, soluong, tongtien, id_khachhang);
-                getSupportFragmentManager().beginTransaction().detach(new CartFragment()).attach(new CartFragment()).commit();
+                if (id_khachhang != 0) {
+                    int soluong = Integer.parseInt(txtSoLuong.getText().toString());
+                    if (soluong > 0) {
+                        presenterDetail.setEventAddtoCart(id_monan, soluong, tongtien, id_khachhang);
+                        getSupportFragmentManager().beginTransaction().detach(new CartFragment()).attach(new CartFragment()).commit();
+                    } else {
+                        Toast.makeText(this, getText(R.string.amount_not_zero), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, getText(R.string.must_login), Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.btnLike:
                 break;
             case R.id.btnShare:
+                break;
+            case R.id.imageButtonMinus:
+                int sl2 = Integer.parseInt(txtSoLuong.getText().toString());
+                if (sl2 > 0) {
+                    sl2 = sl2 - 1;
+                    tongtien = sl2 * Integer.parseInt(giaban);
+                    txtSoLuong.setText(sl2+"");
+                    txtTongTien.setText(tongtien+"vnđ");
+                    if (sl2 == 0) {
+                        imageButtonMinus.setVisibility(View.GONE);
+                    }
+                }
+                break;
+            case R.id.imageButtonAdd:
+                int sl1 = Integer.parseInt(txtSoLuong.getText().toString());
+                sl1 = sl1 + 1;
+                imageButtonMinus.setVisibility(View.VISIBLE);
+                tongtien = sl1 * Integer.parseInt(giaban);
+                txtSoLuong.setText(sl1+"");
+                txtTongTien.setText(tongtien+"vnđ");
                 break;
         }
     }

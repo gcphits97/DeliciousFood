@@ -1,21 +1,21 @@
 package com.example.simplifyv2.deliciousfood.Models;
 
-import java.util.Date;
-
 public class ChiTietDonHangModel {
-    int id_donhang, id_khachhang, id_hinhthucthanhtoan, id_chitietdonhang;
+    int id_donhang, id_khachhang, id_hinhthucthanhtoan, id_chitietdonhang, soluong, tongtien;
     String hoten, sdt, tenhinhthucthanhtoan, tenloaidonhang, diachigiaohang, thoigiangiaohang, thoigiandatban;
 
     public ChiTietDonHangModel() {
     }
 
     public ChiTietDonHangModel(int id_donhang, int id_khachhang, int id_hinhthucthanhtoan, int id_chitietdonhang
-                                , String hoten, String sdt, String tenhinhthucthanhtoan, String tenloaidonhang
-                                , String diachigiaohang, String thoigiangiaohang, String thoigiandatban) {
+            , int soluong, int tongtien, String hoten, String sdt, String tenhinhthucthanhtoan
+            , String tenloaidonhang, String diachigiaohang, String thoigiangiaohang, String thoigiandatban) {
         this.id_donhang = id_donhang;
         this.id_khachhang = id_khachhang;
         this.id_hinhthucthanhtoan = id_hinhthucthanhtoan;
         this.id_chitietdonhang = id_chitietdonhang;
+        this.soluong = soluong;
+        this.tongtien = tongtien;
         this.hoten = hoten;
         this.sdt = sdt;
         this.tenhinhthucthanhtoan = tenhinhthucthanhtoan;
@@ -23,6 +23,22 @@ public class ChiTietDonHangModel {
         this.diachigiaohang = diachigiaohang;
         this.thoigiangiaohang = thoigiangiaohang;
         this.thoigiandatban = thoigiandatban;
+    }
+
+    public int getSoluong() {
+        return soluong;
+    }
+
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
+    }
+
+    public int getTongtien() {
+        return tongtien;
+    }
+
+    public void setTongtien(int tongtien) {
+        this.tongtien = tongtien;
     }
 
     public int getId_chitietdonhang() {

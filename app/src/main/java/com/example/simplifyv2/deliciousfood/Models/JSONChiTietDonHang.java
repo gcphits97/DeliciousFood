@@ -22,6 +22,8 @@ public class JSONChiTietDonHang {
                 chiTietDonHangModel.setId_donhang(value.getInt("id_donhang"));
                 chiTietDonHangModel.setId_chitietdonhang(value.getInt("id_chitietdonhang"));
                 chiTietDonHangModel.setId_khachhang(value.getInt("id_khachhang"));
+                chiTietDonHangModel.setSoluong(value.getInt("soluong"));
+                chiTietDonHangModel.setTongtien(value.getInt("tongtien"));
                 chiTietDonHangModel.setHoten(value.getString("hoten"));
                 chiTietDonHangModel.setSdt(value.getString("sdt"));
                 chiTietDonHangModel.setTenhinhthucthanhtoan(value.getString("tenhinhthucthanhtoan"));

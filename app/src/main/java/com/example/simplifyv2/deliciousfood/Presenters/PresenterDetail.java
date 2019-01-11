@@ -13,8 +13,7 @@ import com.example.simplifyv2.deliciousfood.Models.ChiTietMonAnModel;
 import com.example.simplifyv2.deliciousfood.Models.DonHangModel;
 import com.example.simplifyv2.deliciousfood.Models.JSONChiTietMonAn;
 import com.example.simplifyv2.deliciousfood.Models.JSONDonHang;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONChiTietMonAn;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONDonHang;
+import com.example.simplifyv2.deliciousfood.Server.DownloadJSONData;
 import com.example.simplifyv2.deliciousfood.Server.Path;
 import com.example.simplifyv2.deliciousfood.View.ViewDetail;
 
@@ -42,10 +41,10 @@ public class PresenterDetail implements ImpDetail {
         int soluongtruoc = 0;
         int tongtientruoc = 0;
 
-        DownloadJSONDonHang downloadJSONDonHang = new DownloadJSONDonHang(path.getPath_donhang());
-        downloadJSONDonHang.execute();
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_donhang());
+        downloadJSONData.execute();
         try {
-            data = downloadJSONDonHang.get();
+            data = downloadJSONData.get();
             JSONDonHang jsonDonHang = new JSONDonHang();
             donHangModelList = jsonDonHang.ParserJSONDonHang(data);
             if (donHangModelList.size() > 0) {
@@ -75,11 +74,11 @@ public class PresenterDetail implements ImpDetail {
         List<ChiTietMonAnModel> chiTietMonAnModelList;
         String data = "";
 
-        DownloadJSONChiTietMonAn downloadJSONChiTietMonAn = new DownloadJSONChiTietMonAn(path.getPath_chitietmonan());
-        downloadJSONChiTietMonAn.execute();
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_chitietmonan());
+        downloadJSONData.execute();
 
         try {
-            data = downloadJSONChiTietMonAn.get();
+            data = downloadJSONData.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

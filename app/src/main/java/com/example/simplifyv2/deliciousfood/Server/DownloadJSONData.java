@@ -10,14 +10,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class DownloadJSONUser extends AsyncTask<String, Void, String> {
+public class DownloadJSONData extends AsyncTask<String, Void, String> {
+    String path;
     StringBuilder data;
-    String path = "";
-
-    public DownloadJSONUser(String path) {
+    public DownloadJSONData(String path) {
         this.path = path;
     }
-
     @Override
     protected String doInBackground(String... strings) {
         try {

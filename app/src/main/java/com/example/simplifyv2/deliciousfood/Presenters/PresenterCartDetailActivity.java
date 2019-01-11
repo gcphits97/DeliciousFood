@@ -3,7 +3,6 @@ package com.example.simplifyv2.deliciousfood.Presenters;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,7 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.simplifyv2.deliciousfood.Models.ChiTietDonHangModel;
 import com.example.simplifyv2.deliciousfood.Models.JSONChiTietDonHang;
 import com.example.simplifyv2.deliciousfood.R;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONChiTietDonHang;
+import com.example.simplifyv2.deliciousfood.Server.DownloadJSONData;
 import com.example.simplifyv2.deliciousfood.Server.Path;
 import com.example.simplifyv2.deliciousfood.View.ViewCartDetail;
 
@@ -240,17 +239,16 @@ public class PresenterCartDetailActivity implements ImpCartDetail, AdapterView.O
 
     @Override
     public void showCartDetail(int id_donhang) {
-        Log.d("kiemtralist", chiTietDonHangModelList().get(0).getTenhinhthucthanhtoan());
         boolean check = false;
         if (chiTietDonHangModelList().size() > 0) {
-            for (ChiTietDonHangModel chiTietDonHangModel: chiTietDonHangModelList()) {
-                if (chiTietDonHangModel.getId_donhang() == id_donhang) {
-                    if (chiTietDonHangModel.getId_hinhthucthanhtoan() == 3) {
-                        viewCartDetail.ShowInfoCartDetail(chiTietDonHangModel.getTenloaidonhang(), ""
-                                , chiTietDonHangModel.getTenhinhthucthanhtoan(), chiTietDonHangModel.getThoigiandatban());
+            for (ChiTietDonHangModel value: chiTietDonHangModelList()) {
+                if (value.getId_donhang() == id_donhang) {
+                    if (value.getId_hinhthucthanhtoan() == 3) {
+                        viewCartDetail.ShowInfoCartDetail(value.getSoluong(), value.getTongtien(), value.getTenloaidonhang()
+                                , "", value.getTenhinhthucthanhtoan(), value.getThoigiandatban());
                     } else {
-                        viewCartDetail.ShowInfoCartDetail(chiTietDonHangModel.getTenloaidonhang(), chiTietDonHangModel.getDiachigiaohang()
-                                , chiTietDonHangModel.getTenhinhthucthanhtoan(), chiTietDonHangModel.getThoigiangiaohang());
+                        viewCartDetail.ShowInfoCartDetail(value.getSoluong(), value.getTongtien(), value.getTenloaidonhang()
+                                , value.getDiachigiaohang(), value.getTenhinhthucthanhtoan(), value.getThoigiangiaohang());
                     }
                     check = true;
                 }
@@ -265,10 +263,10 @@ public class PresenterCartDetailActivity implements ImpCartDetail, AdapterView.O
         List<ChiTietDonHangModel> chiTietDonHangModelList;
         String data = "";
 
-        DownloadJSONChiTietDonHang downloadJSONChiTietDonHang = new DownloadJSONChiTietDonHang(path.getPath_chitietdonhang());
-        downloadJSONChiTietDonHang.execute();
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_chitietdonhang());
+        downloadJSONData.execute();
         try {
-            data = downloadJSONChiTietDonHang.get();
+            data = downloadJSONData.get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

@@ -7,13 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.simplifyv2.deliciousfood.View.Fragments.AccountFragment;
+import com.example.simplifyv2.deliciousfood.View.Fragments.FragmentHome.FastFoodFragment;
 import com.example.simplifyv2.deliciousfood.View.Fragments.HomeFragment;
 import com.example.simplifyv2.deliciousfood.View.Fragments.NotificationsFragment;
 import com.example.simplifyv2.deliciousfood.View.Fragments.CartFragment;
 import com.example.simplifyv2.deliciousfood.R;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         //Khởi tạo fragment home khi ứng dụng chạy
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new HomeFragment()).addToBackStack(null).commit();
     }
 
     @Override
@@ -38,16 +38,16 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new HomeFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new HomeFragment()).addToBackStack(null).commit();
                     return true;
                 case R.id.navigation_cart:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new CartFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new CartFragment()).addToBackStack(null).commit();
                     return true;
                 case R.id.navigation_notifications:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new NotificationsFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new NotificationsFragment()).addToBackStack(null).commit();
                     return true;
                 case R.id.navigation_account:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new AccountFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentMain, new AccountFragment()).addToBackStack(null).commit();
                     return true;
             }
             return false;

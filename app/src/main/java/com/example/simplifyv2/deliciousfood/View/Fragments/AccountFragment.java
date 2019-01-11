@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,12 +20,14 @@ import com.example.simplifyv2.deliciousfood.View.LoginActivity;
 import com.example.simplifyv2.deliciousfood.View.PaymentActivity;
 import com.example.simplifyv2.deliciousfood.R;
 import com.example.simplifyv2.deliciousfood.View.ProfileActivity;
+import com.example.simplifyv2.deliciousfood.View.SearchViewActivity;
 
 public class AccountFragment extends Fragment implements View.OnClickListener {
     private TextView txtVersionFragmentAccount, txtPayment, txtLogin, txtViewProfile, txtLogOut, txtName, txtEmail;
     private static final int flags = 1;
     LinearLayout frameLogin, frameViewProfile;
     SharedPreferences recived;
+    ImageButton imageButtonSearch;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         txtLogOut = view.findViewById(R.id.txtLogOut);
         txtName = view.findViewById(R.id.txtName);
         txtEmail = view.findViewById(R.id.txtEmail);
+        imageButtonSearch = view.findViewById(R.id.imageButtonSearch);
         //lấy version ứng dụng
         try {
             @SuppressLint("WrongConstant")
@@ -55,6 +59,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         txtLogin.setOnClickListener(this);
         txtViewProfile.setOnClickListener(this);
         txtLogOut.setOnClickListener(this);
+        imageButtonSearch.setOnClickListener(this);
         return view;
     }
 
@@ -108,6 +113,10 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
             case R.id.txtViewProfile:
                 Intent iProfile = new Intent(getContext(), ProfileActivity.class);
                 startActivity(iProfile);
+                break;
+            case R.id.imageButtonSearch:
+                Intent iSearch = new Intent(getContext(), SearchViewActivity.class);
+                startActivity(iSearch);
                 break;
             case R.id.txtPayment:
                 Intent iPayment = new Intent(getContext(), PaymentActivity.class);

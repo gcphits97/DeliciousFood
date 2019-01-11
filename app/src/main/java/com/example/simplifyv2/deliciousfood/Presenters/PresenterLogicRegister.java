@@ -1,7 +1,6 @@
 package com.example.simplifyv2.deliciousfood.Presenters;
 
 import android.content.Context;
-import android.util.Log;
 import android.util.Patterns;
 
 import com.android.volley.AuthFailureError;
@@ -14,7 +13,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.simplifyv2.deliciousfood.Models.JSONUser;
 import com.example.simplifyv2.deliciousfood.Models.UserModel;
 import com.example.simplifyv2.deliciousfood.R;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONUser;
+import com.example.simplifyv2.deliciousfood.Server.DownloadJSONData;
 import com.example.simplifyv2.deliciousfood.Server.Path;
 import com.example.simplifyv2.deliciousfood.View.ViewRegister;
 
@@ -38,11 +37,11 @@ public class PresenterLogicRegister implements ImpRegister {
         String data = "";
         boolean check = true;
 
-        DownloadJSONUser downloadJSONUser = new DownloadJSONUser(path.getPath_khachhang());
-        downloadJSONUser.execute();
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_khachhang());
+        downloadJSONData.execute();
 
         try {
-            data = downloadJSONUser.get();
+            data = downloadJSONData.get();
             JSONUser jsonUser = new JSONUser();
             userModelList = jsonUser.ParseJSONUser(data);
             for (UserModel value: userModelList) {

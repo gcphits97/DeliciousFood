@@ -33,11 +33,15 @@ public class DrinkFragment extends Fragment implements ViewDrink {
         View view = inflater.inflate(R.layout.fragment_drink, container, false);
         recyclerViewDrinkFragment = view.findViewById(R.id.recyclerViewDrinkFragment);
         viewFlipperDrink = view.findViewById(R.id.viewFlipperDrink);
-
         presentLogicDrink = new PresentLogicDrink(this);
         presentLogicDrink.getDataDrink();
         presentLogicDrink.getDataDrinkBanChay();
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override

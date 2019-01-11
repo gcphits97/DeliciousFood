@@ -2,7 +2,7 @@ package com.example.simplifyv2.deliciousfood.Presenters;
 
 import com.example.simplifyv2.deliciousfood.Models.JSONUser;
 import com.example.simplifyv2.deliciousfood.Models.UserModel;
-import com.example.simplifyv2.deliciousfood.Server.DownloadJSONUser;
+import com.example.simplifyv2.deliciousfood.Server.DownloadJSONData;
 import com.example.simplifyv2.deliciousfood.Server.Path;
 import com.example.simplifyv2.deliciousfood.View.ViewLogin;
 
@@ -24,11 +24,11 @@ public class PresenterLogicLogin implements ImpLogin {
         String data = "";
         boolean checkLogin = false;
 
-        DownloadJSONUser downloadJSONUser = new DownloadJSONUser(path.getPath_khachhang());
-        downloadJSONUser.execute();
+        DownloadJSONData downloadJSONData = new DownloadJSONData(path.getPath_khachhang());
+        downloadJSONData.execute();
 
         try {
-            data = downloadJSONUser.get();
+            data = downloadJSONData.get();
             JSONUser jsonUser = new JSONUser();
             userModelList = jsonUser.ParseJSONUser(data);
             for (UserModel userModel: userModelList) {

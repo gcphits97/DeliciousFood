@@ -9,6 +9,6 @@ public interface ViewCartDetail {
     void BookFail();
     void DeliverySuccessfully();
     void DeliveryFail();
-    void ShowInfoCartDetail(String hinhthucdonhang, String diachigiaohang, String hinhthucthanhtoan, String thoigian);
+    void ShowInfoCartDetail(int soluong, int tongtien, String hinhthucdonhang, String diachigiaohang, String hinhthucthanhtoan, String thoigian);
     void CartDetailHaveNotData();
 }

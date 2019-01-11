@@ -54,15 +54,40 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/edtSoLuongAdd"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:hint="So luong"
+        <ImageButton
+            android:id="@+id/imageButtonMinus"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_action_minus_white"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/txtSoLuong"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"
             android:background="@drawable/custom_amount"
-            android:layout_marginRight="120dp"
-            android:layout_height="match_parent" />
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/imageButtonAdd"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_action_add_white"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/txtTongTien"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnAddToCart"
             android:textColor="@color/colorWhite"

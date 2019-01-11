@@ -24,6 +24,7 @@
     <string name="order_history_fragment_account">Order History</string>
     <string name="invite_friends_fragment_account">Invite Friends</string>
     <string name="feedback_fragment_account">Feedback</string>
+    <string name="title_fragment_account">Account</string>
     //end account fragment
     //start payment activity
     <string name="title_payment_activity">Payment</string>
@@ -82,11 +83,17 @@
     //error end
     //detail activity start
     <string name="hint_comment">Comment...</string>
+    <string name="must_login">You must Login!</string>
+    <string name="amount_not_zero">Amount can not zero</string>
     //detail activity end
     //cart fragment start
     <string name="amount">So luong:</string>
     <string name="tongtien">Tong tien:</string>
+    <string name="title_fragment_cart">Cart</string>
     //cart fragment end
+    //notification fragment start
+    <string name="title_fragment_notification">Notification</string>
+    //notification fragment end
     //cart detail activity start
     <string name="save_to_cart">Save</string>
     <string name="delivery">Delivery</string>

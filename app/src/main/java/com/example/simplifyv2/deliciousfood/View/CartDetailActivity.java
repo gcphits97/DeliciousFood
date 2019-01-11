@@ -1,6 +1,5 @@
 package com.example.simplifyv2.deliciousfood.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -198,18 +197,18 @@ public class CartDetailActivity extends AppCompatActivity implements View.OnClic
     }
 
     @Override
-    public void ShowInfoCartDetail(String hinhthucdonhang, String diachigiaohang, String hinhthucthanhtoan, String thoigian) {
+    public void ShowInfoCartDetail(int soluongInfo, int tongtienInfo, String hinhthucdonhang, String diachigiaohang, String hinhthucthanhtoan, String thoigian) {
         linearLayoutDeliveryAndBook.setVisibility(View.GONE);
         linearLayoutSave.setVisibility(View.GONE);
-        if (diachigiaohang != null) {
-
-        } else {
+        if (diachigiaohang.equalsIgnoreCase("")) {
             linearLayoutBook.setVisibility(View.VISIBLE);
-            txtSoLuongInfo.setText(txtSoLuong.getText().toString());
-            txtTongTien.setText(txtSoLuong.getText().toString());
+            txtSoLuongInfo.setText(soluongInfo+"");
+            txtTongTienInfo.setText(tongtienInfo+"vnđ");
             txtHinhThucDonHang.setText(hinhthucdonhang);
             txtHinhThucThanhToan.setText(hinhthucthanhtoan);
             txtThoiGianDatBan.setText(thoigian);
+        } else {
+
         }
     }
 

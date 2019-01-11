@@ -22,7 +22,7 @@ import com.example.simplifyv2.deliciousfood.Server.DownloadImageBitmapFromURL;
 
 import java.util.List;
 
-public class FastFoodFragment extends Fragment implements View.OnClickListener, ViewFastFood {
+public class FastFoodFragment extends Fragment implements ViewFastFood {
     PresentLogicFastFood presentLogicFastFood;
     RecyclerView recyclerViewFastFoodFragment;
     AdapterFastFoodFragment adapterFastFoodFragment;
@@ -31,10 +31,8 @@ public class FastFoodFragment extends Fragment implements View.OnClickListener, 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fastfood, container, false);
-
         recyclerViewFastFoodFragment = view.findViewById(R.id.recyclerViewFastFoodFragment);
         viewFlipperFastFood = view.findViewById(R.id.viewFlipperFastFood);
-
         presentLogicFastFood = new PresentLogicFastFood(this);
         presentLogicFastFood.getDataFastFood();
         presentLogicFastFood.getDataFastFoodBanChay();
@@ -42,8 +40,8 @@ public class FastFoodFragment extends Fragment implements View.OnClickListener, 
     }
 
     @Override
-    public void onClick(View v) {
-
+    public void onStart() {
+        super.onStart();
     }
 
     @Override

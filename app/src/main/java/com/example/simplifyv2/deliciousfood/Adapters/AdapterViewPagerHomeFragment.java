@@ -11,28 +11,34 @@ import com.example.simplifyv2.deliciousfood.View.Fragments.FragmentHome.FastFood
 public class AdapterViewPagerHomeFragment extends FragmentPagerAdapter {
 
     private String tabTitle[] = new String[]{"Fast Food", "Drink & Tea", "Cakes"};
+    FastFoodFragment fastFoodFragment;
+    CakeFragment cakeFragment;
+    DrinkFragment drinkFragment;
+    private static final int count = 3;
 
     public AdapterViewPagerHomeFragment(FragmentManager fm) {
         super(fm);
+        fastFoodFragment = new FastFoodFragment();
+        cakeFragment = new CakeFragment();
+        drinkFragment = new DrinkFragment();
     }
 
     @Override
     public Fragment getItem(int i) {
         switch (i) {
             case 0:
-                return new FastFoodFragment();
+                return fastFoodFragment;
             case 1:
-                return new DrinkFragment();
+                return cakeFragment;
             case 2:
-                return new CakeFragment();
-            default:
-                return new FastFoodFragment();
+                return drinkFragment;
         }
+        return null;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return count;
     }
 
     @Override

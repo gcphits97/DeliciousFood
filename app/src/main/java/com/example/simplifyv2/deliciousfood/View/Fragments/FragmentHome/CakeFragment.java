@@ -33,11 +33,15 @@ public class CakeFragment extends Fragment implements ViewCake {
         View view = inflater.inflate(R.layout.fragment_cake, container, false);
         recyclerViewCakeFragment = view.findViewById(R.id.recyclerViewCakeFragment);
         viewFlipperCake = view.findViewById(R.id.viewFlipperCake);
-
         presentLogicCake = new PresentLogicCake(this);
         presentLogicCake.getDataCake();
         presentLogicCake.getDataCakeBanChay();
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
